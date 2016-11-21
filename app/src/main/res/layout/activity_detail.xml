@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/fondogo"
+    tools:context=".DetailActivity">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/happy"/>
+
+    <TextView
+        android:id="@+id/txv_nombre"
+        android:layout_below="@id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Auxiliar Administrativo"
+        android:textSize="30dp"
+        android:textColor="#FFFFFF"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_below="@id/txv_nombre"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/white_transparency_home"
+        android:layout_height="5dp" />
+
+    <ScrollView
+        android:layout_below="@id/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:id="@+id/viewB"
+            android:layout_marginTop="25dp"
+            android:paddingBottom="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_pressed"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_dehaze_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="35dp"
+                    android:text="ID"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imgCalendar"
+                    android:layout_toEndOf="@+id/imgCalendar" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgContentPaste"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_input_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:alpha="0.87"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginStart="35dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:text="STATUS"
+                    android:textColor="@android:color/white"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imgContentPaste"
+                    android:layout_toEndOf="@+id/imgContentPaste" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/txvFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:alpha="0.87"
+                    android:text="FECHA"
+                    android:textColor="@android:color/white"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imgTime"
+                    android:layout_toEndOf="@+id/imgTime" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvSueldo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:text="SUELDO"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imgTicket"
+                    android:layout_toEndOf="@+id/imgTicket" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgHorarioLab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvHorarioLab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"
+                    android:text="HORARIO LAB"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/imgHorarioLab"
+                    android:layout_toEndOf="@+id/imgHorarioLab" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgUbicacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvUbicacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"
+                    android:text="UBICACION"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/imgUbicacion"
+                    android:layout_toEndOf="@+id/imgUbicacion" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgDepartamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvDepartamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"
+                    android:text="DEPARTAMENTO"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/imgDepartamento"
+                    android:layout_toEndOf="@+id/imgDepartamento" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgObjetivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvObjetivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"
+                    android:text="OBJETIVO"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/imgObjetivo"
+                    android:layout_toEndOf="@+id/imgObjetivo" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgHabilidades"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvHabilidades"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"
+                    android:text="HABILIDADES"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/imgHabilidades"
+                    android:layout_toEndOf="@+id/imgHabilidades" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgEdad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvEdad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"
+                    android:text="EDAD"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/imgEdad"
+                    android:layout_toEndOf="@+id/imgEdad" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgGenero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvGenero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"
+                    android:text="GENERO"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/imgGenero"
+                    android:layout_toEndOf="@+id/imgGenero" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgNivelEstudios"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvNivelEstudios"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"
+                    android:text="NIVEL ESTUDIOS"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/imgNivelEstudios"
+                    android:layout_toEndOf="@+id/imgNivelEstudios" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:id="@+id/imgExperiencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/txvExperiencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.87"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"
+                    android:text="EXPERIENCIA"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/imgExperiencia"
+                    android:layout_toEndOf="@+id/imgExperiencia" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

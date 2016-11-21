@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+                <!-- Customize your theme here. -->
+                <item name="colorPrimary">@color/colorPrimary</item>
+                <item name="colorPrimaryDark">#e61414</item>
+                <item name="colorAccent">@color/pink</item>
+                <item name="drawerArrowStyle">@style/MaterialDrawer.DrawerArrowStyle</item>
+                <item name="android:timePickerDialogTheme">@style/Dialog.Theme</item>
+                <item name="android:windowContentTransitions">true</item>
+                <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+                <item name="android:listSeparatorTextViewStyle">@style/ListSeparatorTextView</item>
+                <item name="actionMenuTextColor">@android:color/white</item>
+
+        </style>
+        <style name="ListSeparatorTextView">
+                <item name="android:textSize">14sp</item>
+                <item name="android:textStyle">bold</item>
+                <item name="android:textColor">@color/green_app</item>
+                <item name="android:paddingTop">16dp</item>
+                <item name="android:layout_marginBottom">16dp</item>
+        </style>
+
+        <style name="your_theme" parent="AppTheme">
+                <item name="android:itemTextAppearance">@style/TextAppearance</item>
+        </style>
+
+        <style name="TextAppearance">
+                <item name="android:textColor">@android:color/black</item>
+        </style>
+</resources>

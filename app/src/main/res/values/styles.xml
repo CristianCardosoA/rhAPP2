@@ -1,0 +1,47 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/blue_itexico</item>
+        <item name="colorAccent">@color/pink</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="drawerArrowStyle">@style/MaterialDrawer.DrawerArrowStyle</item>
+    </style>
+
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@android:color/white</item>
+    </style>
+
+    <style name="CropTheme" parent="AppTheme">
+        <item name="colorAccent">@color/fav_color</item>
+    </style>
+
+    <style name="toolbar" parent="Widget.AppCompat.ActionBar">
+        <item name="displayOptions">showHome|homeAsUp|showTitle</item>
+    </style>
+    <style name="MaterialDrawer.DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">false</item>
+        <item name="color">@android:color/white</item>
+    </style>
+    <style name="Dialog.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/blue_itexico</item>
+        <item name="colorPrimaryDark">@color/black_button</item>
+        <item name="colorAccent">@color/blue_itexico</item>
+    </style>
+
+    <style name="MyTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorPrimaryDark">@color/black_button</item>
+        <item name="colorAccent">@color/pink</item>
+    </style>
+
+</resources>

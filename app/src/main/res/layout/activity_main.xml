@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="fca.mx.rhapp.MainActivity"
+    android:background="@color/BackgroundLogin"
+    android:gravity="center_horizontal">
+
+    <include
+        android:id="@+id/toolBarLogin"
+        layout="@layout/toolbar_shadow"/>
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/logo_cotton"
+        />
+
+    <EditText
+        android:id="@+id/edt_username"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/user_edit_text"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:singleLine="true"
+        android:background="@drawable/background_edit_text_login"
+        android:hint="@string/hint_usuario"/>
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/password_edit_text"
+        android:inputType="textPassword"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:singleLine="true"
+        android:background="@drawable/background_edit_text_login"
+        android:hint="@string/hint_password"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Background_button_Login"
+        android:text="@string/hint_button_pass"
+        android:padding="20dp"
+        android:textColor="@android:color/white" />
+    <ProgressBar
+        android:id="@+id/progressBarDialog"
+        android:layout_width="50dp"
+        android:visibility="invisible"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_height="50dp" />
+
+</LinearLayout>

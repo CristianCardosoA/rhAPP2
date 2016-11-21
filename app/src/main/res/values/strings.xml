@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RHapp</string>
+    <string name="hint_usuario">Ingrese usuario</string>
+    <string name="hint_password">Ingrese password</string>
+    <string name="hint_button_pass">Ingresar</string>
+    <string name="please_wait">Cargando ...</string>
+
+    <string name="base_path_requests" translatable="false"></string>
+    <string name="base_path_production" translatable="false">http://rigel.fca.unam.mx/~li310008916/rhApp/index.php/dadmin/app/</string>
+    <string name="api_login" translatable="false">login</string>
+    <string name="api_puestos" translatable="false">getpuestos</string>
+</resources>

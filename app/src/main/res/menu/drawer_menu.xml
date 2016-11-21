@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--
+        <group android:checkableBehavior="none">
+            <item
+                android:id="@+id/first2"
+                android:icon="@drawable/ic_speaker_phone_black_24dp"
+                android:title="@string/notifications"
+                android:checkable="false"
+                app:actionLayout="@layout/drawer_switch_button"/>
+        </group>
+
+    -->
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/settings_item_menu"
+            android:checked="false"
+            android:checkable="true"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:title="Settings" />
+
+    <item
+            android:id="@+id/log_out_item_menu"
+            android:checked="false"
+            android:checkable="true"
+            android:icon="@drawable/ic_input_black_24dp"
+            android:title="Log out" />
+    </group>
+
+</menu>
