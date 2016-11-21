@@ -136,7 +136,7 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         if (holder instanceof ViewHolder) {
             final Perfil perfil = mDataset.get(position);
             ((ViewHolder) holder).txvProject.setText(perfil.getTitulo());
-            ((ViewHolder) holder).txvDayNumber.setText(perfil.getFecha());
+            ((ViewHolder) holder).txvDayNumber.setText("Última fecha de actualización\n" + perfil.getFecha());
             ((ViewHolder) holder).uniqueView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

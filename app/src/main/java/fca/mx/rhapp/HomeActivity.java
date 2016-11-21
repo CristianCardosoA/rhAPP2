@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements OnSearch {
 
     /**
      * Drawer layout
@@ -35,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private NavigationView navigationView;
     private LinearLayout progress_layout;
+    private TextView title;
 
 
     @Override
@@ -62,23 +63,23 @@ public class HomeActivity extends AppCompatActivity {
                 else item.setChecked(true);
                 int option = 0;
                 switch (item.getItemId()) {
-                    case R.id.settings_item_menu: //Settings
+                    case R.id.home: //Home
+                        option = 1;
+                        break;
+                    case R.id.search: //Search
                         option = 2;
                         break;
                     case R.id.log_out_item_menu: //LOG OUT
                         option = 3;
+                        Preferences.setBoolean(HomeActivity.this,Preferences.SHAREDPREFERENCE_KEY.KEY_LOGIN,false);
                         Intent i = new Intent(HomeActivity.this,MainActivity.class);
                         startActivity(i);
                         finish();
                         break;
                 }
 
-                if (option == 2  || option == 3) {
                     mDrawerLayout.closeDrawers();
                     displayViewFromDrawer(option, item.getTitle().toString());
-                } else if (option == 1) {
-                    mDrawerLayout.closeDrawers();
-                }
                 return false;
             }
         });
@@ -102,7 +103,7 @@ public class HomeActivity extends AppCompatActivity {
 
         displayViewFromDrawer(1,null);
 
-        TextView title = (TextView) findViewById(R.id.title);
+        title = (TextView) findViewById(R.id.title);
         assert title != null;
         title.setVisibility(View.VISIBLE);
         title.setText("Profiles");
@@ -122,6 +123,8 @@ public class HomeActivity extends AppCompatActivity {
 
         }else if(id == android.R.id.home){
 
+        }else if(id == R.id.search){
+            displayViewFromDrawer(2,"Búsqueda");
         }
         return super.onOptionsItemSelected(item);
     }
@@ -135,16 +138,27 @@ public class HomeActivity extends AppCompatActivity {
     private void displayViewFromDrawer(int position, @Nullable String textTitle) {
         Fragment fragment = null;
         switch (position){
-            case 1: //Activity record
+            case 1: //Home record
                 fragment = SettingsFragment.newInstance();
                 break;
-
+            case 2: //Search record
+                fragment = Search.newInstance();
+                break;
+            case 5:
+                fragment = Results.newInstance(textTitle);
+                break;
         }
+        if (textTitle != null) title.setText(textTitle);
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment,"fragment_container");
             ft.addToBackStack(null);
             ft.commit();
         }
+    }
+
+    @Override
+    public void onSearch(String name) {
+        displayViewFromDrawer(5,name);
     }
 }
