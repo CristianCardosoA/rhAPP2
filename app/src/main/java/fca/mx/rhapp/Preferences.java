@@ -9,7 +9,8 @@ public class Preferences {
 
     public enum SHAREDPREFERENCE_KEY {
 
-        KEY_LOGIN(false);
+        KEY_LOGIN(false),
+        KEY_USERNAME("");
 
         SHAREDPREFERENCE_KEY(final Object defaultValue) {
             mDefaultValue = defaultValue;

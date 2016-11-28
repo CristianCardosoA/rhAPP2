@@ -9,25 +9,11 @@
     android:background="@color/BackgroundLogin"
     android:gravity="center_horizontal">
 
-    <include
-        android:id="@+id/toolBarLogin"
-        layout="@layout/toolbar_shadow"/>
-
     <ImageView
         android:layout_width="350dp"
         android:layout_height="150dp"
-        android:src="@mipmap/fca"
+        android:src="@mipmap/logo_cotton"
         />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DESCRIPCIÓN DE PUESTOS"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
-        android:textStyle="bold"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
-    />
 
     <EditText
         android:id="@+id/edt_username"
@@ -37,26 +23,17 @@
         android:singleLine="true"
         android:padding="10dp"
         android:background="@drawable/background_edit_text_login"
-        android:hint="@string/hint_usuario"/>
-    <EditText
-        android:id="@+id/edt_password"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/password_edit_text"
-        android:inputType="textPassword"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:padding="10dp"
-        android:singleLine="true"
-        android:background="@drawable/background_edit_text_login"
-        android:hint="@string/hint_password"/>
+        android:hint="Ingrese perfil a buscar"/>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/Background_button_Login"
-        android:text="@string/hint_button_pass"
+        android:text="Buscar"
         android:padding="20dp"
         android:textColor="@android:color/white" />
+
     <ProgressBar
         android:id="@+id/progressBarDialog"
         android:layout_width="50dp"

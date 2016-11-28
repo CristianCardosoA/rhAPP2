@@ -243,6 +243,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
+                android:visibility="gone"
                 android:orientation="horizontal"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent">
@@ -254,6 +255,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:src="@drawable/ic_youtube_searched_for_black_24dp"/>
 
                 <TextView
@@ -268,6 +270,7 @@
                     android:textColor="@android:color/white"
                     android:layout_marginStart="35dp"
                     android:layout_marginLeft="35dp"
+                    android:visibility="gone"
                     android:layout_toRightOf="@+id/imgUbicacion"
                     android:layout_toEndOf="@+id/imgUbicacion" />
 

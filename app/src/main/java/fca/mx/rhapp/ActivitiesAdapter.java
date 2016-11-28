@@ -3,11 +3,17 @@ package fca.mx.rhapp;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -93,6 +99,7 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
          * Main container.
          */
         final View uniqueView;
+        final ImageView img;
 
 
         ViewHolder(View v) {
@@ -100,6 +107,7 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             uniqueView = v;
             txvProject = (TextView) v.findViewById(R.id.txv_nombre_puesto);
             txvDayNumber = (TextView) v.findViewById(R.id.txv_fecha);
+            img = (ImageView) v.findViewById(R.id.img);
 
         }
     }
@@ -120,6 +128,7 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
 
+        Log.e("view type", "" + viewType);
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_perfil, viewGroup,false);
             ViewHolder viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
@@ -130,13 +139,14 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
 
         //pos its the current position of adapter.
-        final int pos = holder.getAdapterPosition();
 
         // If holder is instance of normal type view activities.
         if (holder instanceof ViewHolder) {
             final Perfil perfil = mDataset.get(position);
             ((ViewHolder) holder).txvProject.setText(perfil.getTitulo());
             ((ViewHolder) holder).txvDayNumber.setText("Última fecha de actualización\n" + perfil.getFecha());
+            Picasso.with(mContext).load("https://unsplash.it/200/300?image=" + position).into(((ViewHolder) holder).img);
+            Picasso.with(mContext).invalidate("https://unsplash.it/200/300/?random");
             ((ViewHolder) holder).uniqueView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -148,6 +158,11 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         }
    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
 
     @Override
     public int getItemCount() {

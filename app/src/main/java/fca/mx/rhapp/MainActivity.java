@@ -90,7 +90,9 @@ public class MainActivity extends AppCompatActivity implements NetworkConnection
         if (respuesta){
             Toast.makeText(getApplicationContext(),"Bienvenido",Toast.LENGTH_LONG).show();
             Preferences.setBoolean(this,Preferences.SHAREDPREFERENCE_KEY.KEY_LOGIN,true);
+            Preferences.setString(this,Preferences.SHAREDPREFERENCE_KEY.KEY_USERNAME, edt_username.getText().toString());
             Intent i = new Intent(this, HomeActivity.class);
+            i.putExtra("nombreUsuario", edt_username.getText().toString());
             startActivity(i);
             finish();
         }else{

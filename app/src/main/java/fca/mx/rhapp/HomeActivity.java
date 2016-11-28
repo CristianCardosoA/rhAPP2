@@ -50,6 +50,7 @@ public class HomeActivity extends AppCompatActivity implements OnSearch {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("");
 
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         assert navigationView != null;
@@ -101,6 +102,12 @@ public class HomeActivity extends AppCompatActivity implements OnSearch {
         };
 
 
+
+            View headerView = navigationView.getHeaderView(0);
+            TextView textView = (TextView) headerView.findViewById(R.id.nombreUsuario);
+            textView.setText(Preferences.getString(this, Preferences.SHAREDPREFERENCE_KEY.KEY_USERNAME));
+
+
         displayViewFromDrawer(1,null);
 
         title = (TextView) findViewById(R.id.title);
@@ -109,6 +116,8 @@ public class HomeActivity extends AppCompatActivity implements OnSearch {
         title.setText("Profiles");
         setTitle("");
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -119,9 +128,7 @@ public class HomeActivity extends AppCompatActivity implements OnSearch {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_community){
-
-        }else if(id == android.R.id.home){
+        if(id == android.R.id.home){
 
         }else if(id == R.id.search){
             displayViewFromDrawer(2,"Búsqueda");
@@ -143,12 +150,13 @@ public class HomeActivity extends AppCompatActivity implements OnSearch {
                 break;
             case 2: //Search record
                 fragment = Search.newInstance();
+                title.setText("Búsqueda : ");
                 break;
             case 5:
                 fragment = Results.newInstance(textTitle);
                 break;
         }
-        if (textTitle != null) title.setText(textTitle);
+        if (textTitle != null) title.getText().toString().concat(textTitle);
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment,"fragment_container");
@@ -159,6 +167,7 @@ public class HomeActivity extends AppCompatActivity implements OnSearch {
 
     @Override
     public void onSearch(String name) {
+
         displayViewFromDrawer(5,name);
     }
 }

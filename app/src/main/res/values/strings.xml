@@ -9,5 +9,5 @@
     <string name="base_path_production" translatable="false">http://rigel.fca.unam.mx/~li310008916/rhApp/index.php/dadmin/app/</string>
     <string name="api_login" translatable="false">login</string>
     <string name="api_puestos" translatable="false">getpuestos</string>
-    <string name="api_puesto" translatable="false">getpuesto</string>
+    <string name="api_puesto" translatable="false">getPuesto</string>
 </resources>
